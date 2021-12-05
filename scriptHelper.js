@@ -46,6 +46,7 @@ function formSubmission(
   fuelLevel,
   cargoLevel
 ) {
+  list.style.visibility ="hidden"
 if(!pilot.value){
  alert("pilot must be filled out correctly ")
 }else if( !isNaN(pilot.value)){
