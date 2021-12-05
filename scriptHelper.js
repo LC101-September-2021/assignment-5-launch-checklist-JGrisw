@@ -81,6 +81,7 @@ if(!cargoLevel.value){
   launchStatus.style.color = "red";
  }
  else {
+   alert("everything is good to go")
    list.style.visibility="visible";
    pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`
    copilotStatus.innerHTML = `Copilot ${copilot.value} is ready for launch`
