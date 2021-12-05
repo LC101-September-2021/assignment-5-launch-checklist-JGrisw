@@ -30,7 +30,7 @@ function validateInput(input) {
     } else if ( isNaN(input)){
       return "Not a number"
     } else if ( !isNaN(input)){
-      return "is a number"
+      return "is a Number"
     } 
 }
 
