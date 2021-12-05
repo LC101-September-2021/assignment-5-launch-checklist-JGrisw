@@ -80,9 +80,9 @@ if(!cargoLevel.value){
   launchStatus.innerHTML = `Shuttle not ready for launch`;
   launchStatus.style.color = "red";
  }
- else {
-   alert("everything is good to go")
-   list.style.visibility="visible";
+ else if( pilot.value && copilot.value && fuelLevel.value >10000 && cargoLevel.value <10000) {
+   alert("shuttle is good to go")
+  list.style.visibility="visible";
    pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`
    copilotStatus.innerHTML = `Copilot ${copilot.value} is ready for launch`
    launchStatus.innerHTML = `Shuttle is ready for launch`;
