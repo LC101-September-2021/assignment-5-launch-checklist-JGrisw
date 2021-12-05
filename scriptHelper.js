@@ -67,12 +67,14 @@ if(!cargoLevel.value){
   alert("Cargo level must be a number")
 } 
  if (fuelLevel.value < 10000){
+   alert("fuel level too low ")
   list.style.visibility = "visible";
   fuelStatus.innerHTML = `Fuel level too low for launch`;
   launchStatus.innerHTML = `Shuttle not ready for launch`;
   launchStatus.style.color = "red";
  }
  if(cargoLevel.value > 10000 ){
+   alert("cargo is too heavy")
   list.style.visibility = "visible";
   cargoStatus.innerHTML = `Cargo too heavy for launch`;
   launchStatus.innerHTML = `Shuttle not ready for launch`;
