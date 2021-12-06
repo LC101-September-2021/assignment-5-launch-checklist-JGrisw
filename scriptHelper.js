@@ -46,7 +46,7 @@ function formSubmission(
   fuelLevel,
   cargoLevel
 ) {
-  list.style.visibility ="hidden"
+list.style.visibility ="hidden"
 if(!pilot.value){
  alert("pilot must be filled out correctly ")
 }else if( !isNaN(pilot.value)){
@@ -68,22 +68,19 @@ if(!cargoLevel.value){
   alert("Cargo level must be a number")
 } 
  if (fuelLevel.value < 10000){
-   alert("fuel level too low ")
   list.style.visibility = "visible";
   fuelStatus.innerHTML = `Fuel level too low for launch`;
   launchStatus.innerHTML = `Shuttle not ready for launch`;
   launchStatus.style.color = "red";
  }
  if(cargoLevel.value > 10000 ){
-   alert("cargo is too heavy")
   list.style.visibility = "visible";
   cargoStatus.innerHTML = `Cargo too heavy for launch`;
   launchStatus.innerHTML = `Shuttle not ready for launch`;
   launchStatus.style.color = "red";
  }
  else if( pilot.value && copilot.value && fuelLevel.value >10000 && cargoLevel.value <10000) {
-   alert("shuttle is good to go")
-  list.style.visibility="visible";
+   list.style.visibility="visible";
    pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`
    copilotStatus.innerHTML = `Copilot ${copilot.value} is ready for launch`
    launchStatus.innerHTML = `Shuttle is ready for launch`;
