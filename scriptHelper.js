@@ -50,12 +50,12 @@ list.style.visibility ="hidden"
 if(!pilot.value){
  alert("pilot must be filled out correctly ")
 }else if( !isNaN(pilot.value)){
-  alert("Make sure to enter valid information for each field"))
+  alert("Make sure to enter valid information for each field");
 }
 if (!copilot.value){
   alert("copilot must be filled out correctly");
 } else if (!isNaN(copilot.value)){
-  alert("Make sure to enter valid information for each field"))
+  alert("Make sure to enter valid information for each field");
 }
 if(!fuelLevel.value){
   alert("All fields are required!")
