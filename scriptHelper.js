@@ -50,22 +50,22 @@ list.style.visibility ="hidden"
 if(!pilot.value){
  alert("pilot must be filled out correctly ")
 }else if( !isNaN(pilot.value)){
-  alert("pilot cannot be a number")
+  alert("Make sure to enter valid information for each field"))
 }
 if (!copilot.value){
   alert("copilot must be filled out correctly");
 } else if (!isNaN(copilot.value)){
-  alert("copilot cannot be a number")
+  alert("Make sure to enter valid information for each field"))
 }
 if(!fuelLevel.value){
-  alert("Fuel level must be entered")
+  alert("All fields are required!")
 } else if(isNaN(fuelLevel.value)){
   alert("Fuel level must be a number")
 } 
 if(!cargoLevel.value){
-  alert("Cargo level must be entered")
+  alert("All fields are required!")
 } else if (isNaN(cargoLevel.value)){
-  alert("Cargo level must be a number")
+  alert("Make sure to enter valid information for each field")
 } 
  if (fuelLevel.value < 10000){
   list.style.visibility = "visible";
