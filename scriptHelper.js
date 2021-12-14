@@ -73,13 +73,13 @@ if(!cargoLevel.value){
   launchStatus.innerHTML = `Shuttle not ready for launch`;
   launchStatus.style.color = "red";
  }
- if(cargoLevel.value > 10000 ){
+ if(cargoLevel.value >= 10000 ){
   list.style.visibility = "visible";
   cargoStatus.innerHTML = `Cargo too heavy for launch`;
   launchStatus.innerHTML = `Shuttle not ready for launch`;
   launchStatus.style.color = "red";
  }
- else if( pilot.value && copilot.value && fuelLevel.value >10000 && cargoLevel.value <10000) {
+ else if( pilot.value && copilot.value && fuelLevel.value >=10000 && cargoLevel.value <10000) {
    list.style.visibility="visible";
    pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`
    copilotStatus.innerHTML = `Copilot ${copilot.value} is ready for launch`
