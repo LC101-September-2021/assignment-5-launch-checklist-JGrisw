@@ -68,14 +68,12 @@ alert("All fields are required!")
 alert("Make sure to enter valid information for each field")
 } 
  if (fuelLevel.value < 10000){
-   alert("fuel too low for launch")
   list.style.visibility = "visible";
   fuelStatus.innerHTML = `Fuel level too low for launch`;
   launchStatus.innerHTML = `Shuttle not ready for launch`;
   launchStatus.style.color = "red";
  }
  if(cargoLevel.value >= 10000 ){
-   alert("cargo too heavy")
   list.style.visibility = "visible";
   cargoStatus.innerHTML = `Cargo too heavy for launch`;
   launchStatus.innerHTML = `Shuttle not ready for launch`;
@@ -83,7 +81,6 @@ alert("Make sure to enter valid information for each field")
  }
  else if( pilot.value && copilot.value && fuelLevel.value >=10000 && cargoLevel.value <10000) {
    list.style.visibility="visible";
-   alert("good to go!")
    pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`
    copilotStatus.innerHTML = `Copilot ${copilot.value} is ready for launch`
    launchStatus.innerHTML = `Shuttle is ready for launch`;
