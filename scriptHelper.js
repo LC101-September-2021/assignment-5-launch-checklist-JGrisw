@@ -48,7 +48,7 @@ function formSubmission(
 ) {
 list.style.visibility ="hidden"
 if(!pilot.value){
- alert("pilot must be filled out correctly ")
+ alert("pilot must be filled out correctly ");
 }else if( !isNaN(pilot.value)){
 alert("Make sure to enter valid information for each field");
 }
@@ -58,14 +58,14 @@ alert("copilot must be filled out correctly");
 alert("Make sure to enter valid information for each field");
 }
 if(!fuelLevel.value){
-alert("All fields are required!")
+alert("All fields are required!");
 } else if(isNaN(fuelLevel.value)){
-alert("Fuel level must be a number")
+alert("Fuel level must be a number");
 } 
 if(!cargoLevel.value){
 alert("All fields are required!")
 } else if (isNaN(cargoLevel.value)){
-alert("Make sure to enter valid information for each field")
+alert("Make sure to enter valid information for each field");
 } 
  if (fuelLevel.value < 10000){
   list.style.visibility = "visible";
@@ -81,8 +81,8 @@ alert("Make sure to enter valid information for each field")
  }
  else if( pilot.value && copilot.value && fuelLevel.value >=10000 && cargoLevel.value <10000) {
    list.style.visibility="visible";
-   pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`
-   copilotStatus.innerHTML = `Copilot ${copilot.value} is ready for launch`
+   pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`;
+   copilotStatus.innerHTML = `Copilot ${copilot.value} is ready for launch`;
    launchStatus.innerHTML = `Shuttle is ready for launch`;
    launchStatus.style.color= "green";
  }
@@ -90,7 +90,7 @@ alert("Make sure to enter valid information for each field")
 
 async function myFetch() {
   const response = await fetch(
-    "https://handlers.education.launchcode.org/static/planets.json"
+    "https://handlers.education.launchcode.org/static/planets.json";
   );
   const json = await response.json();
   return json;
