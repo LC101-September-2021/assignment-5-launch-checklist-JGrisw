@@ -90,7 +90,7 @@ alert("Make sure to enter valid information for each field");
 
 async function myFetch() {
   const response = await fetch(
-    "https://handlers.education.launchcode.org/static/planets.json";
+    "https://handlers.education.launchcode.org/static/planets.json"
   );
   const json = await response.json();
   return json;
