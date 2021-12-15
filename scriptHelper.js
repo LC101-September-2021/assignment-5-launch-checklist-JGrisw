@@ -48,32 +48,34 @@ function formSubmission(
 ) {
 list.style.visibility ="hidden"
 if(!pilot.value){
-//  alert("pilot must be filled out correctly ")
+ alert("pilot must be filled out correctly ")
 }else if( !isNaN(pilot.value)){
-// alert("Make sure to enter valid information for each field");
+alert("Make sure to enter valid information for each field");
 }
 if (!copilot.value){
-// alert("copilot must be filled out correctly");
+alert("copilot must be filled out correctly");
 } else if (!isNaN(copilot.value)){
-// alert("Make sure to enter valid information for each field");
+alert("Make sure to enter valid information for each field");
 }
 if(!fuelLevel.value){
-// alert("All fields are required!")
+alert("All fields are required!")
 } else if(isNaN(fuelLevel.value)){
-// alert("Fuel level must be a number")
+alert("Fuel level must be a number")
 } 
 if(!cargoLevel.value){
 alert("All fields are required!")
 } else if (isNaN(cargoLevel.value)){
-// alert("Make sure to enter valid information for each field")
+alert("Make sure to enter valid information for each field")
 } 
  if (fuelLevel.value < 10000){
+   alert("fuel too low for launch")
   list.style.visibility = "visible";
   fuelStatus.innerHTML = `Fuel level too low for launch`;
   launchStatus.innerHTML = `Shuttle not ready for launch`;
   launchStatus.style.color = "red";
  }
  if(cargoLevel.value >= 10000 ){
+   alert("cargo too heavy")
   list.style.visibility = "visible";
   cargoStatus.innerHTML = `Cargo too heavy for launch`;
   launchStatus.innerHTML = `Shuttle not ready for launch`;
@@ -81,6 +83,7 @@ alert("All fields are required!")
  }
  else if( pilot.value && copilot.value && fuelLevel.value >=10000 && cargoLevel.value <10000) {
    list.style.visibility="visible";
+   alert("good to go!")
    pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`
    copilotStatus.innerHTML = `Copilot ${copilot.value} is ready for launch`
    launchStatus.innerHTML = `Shuttle is ready for launch`;
