@@ -47,39 +47,31 @@ function formSubmission(
   cargoLevel
 ) {
 list.style.visibility ="hidden"
-if(!pilot.value){
- alert("pilot must be filled out correctly ");
-}else if( !isNaN(pilot.value)){
-alert("Make sure to enter valid information for each field");
+if(!pilot.value || !copilot.value || !fuelLevel.value || !cargoLevel.value){
+ alert("All fields must be filled out!");
 }
-if (!copilot.value){
-alert("copilot must be filled out correctly");
-} else if (!isNaN(copilot.value)){
-alert("Make sure to enter valid information for each field");
+else if( !isNaN(pilot.value) || !isNaN(copilot.value) || isNaN(fuelLevel.value) || isNaN(cargoLevel.value)){
+alert("Make sure to enter valid information for each field!");
 }
-if(!fuelLevel.value){
-alert("All fields are required!");
-} else if(isNaN(fuelLevel.value)){
-alert("Fuel level must be a number");
-} 
-if(!cargoLevel.value){
-alert("All fields are required!")
-} else if (isNaN(cargoLevel.value)){
-alert("Make sure to enter valid information for each field");
-} 
- if (fuelLevel.value < 10000){
+
+ if (fuelLevel.value < 10000 && cargoLevel.value <10000){
   list.style.visibility = "visible";
+  pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`;
+  copilotStatus.innerHTML = `Copilot ${copilot.value} is ready for launch`;
   fuelStatus.innerHTML = `Fuel level too low for launch`;
   launchStatus.innerHTML = `Shuttle not ready for launch`;
   launchStatus.style.color = "red";
  }
- if(cargoLevel.value >= 10000 ){
+ if(cargoLevel.value >= 10000 && fuelLevel.value >=10000 ){
   list.style.visibility = "visible";
+  pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`;
+  copilotStatus.innerHTML = `Copilot ${copilot.value} is ready for launch`;
   cargoStatus.innerHTML = `Cargo too heavy for launch`;
+  fuelStatus.innerHTML =  'Fuel Level high enough for launch';
   launchStatus.innerHTML = `Shuttle not ready for launch`;
   launchStatus.style.color = "red";
  }
- else if( pilot.value && copilot.value && fuelLevel.value >=10000 && cargoLevel.value <10000) {
+ if( pilot.value && copilot.value && fuelLevel.value >=10000 && cargoLevel.value <10000) {
    list.style.visibility="visible";
    pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`;
    copilotStatus.innerHTML = `Copilot ${copilot.value} is ready for launch`;
