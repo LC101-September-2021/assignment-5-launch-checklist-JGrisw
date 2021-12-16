@@ -4,28 +4,25 @@ window.addEventListener("load", function () {
   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
   let listedPlanetsResponse = myFetch();
   listedPlanetsResponse
-  .then(function (result) {
-    listedPlanets = result;
-  })
-  .then(function () {
+    .then(function (result) {
+      listedPlanets = result;
+    })
+    .then(function () {
+      chosenPlanet = pickPlanet(listedPlanets);
+      addDestinationInfo(
+        missionTarget,
+        chosenPlanet.name,
+        chosenPlanet.diameter,
+        chosenPlanet.star,
+        chosenPlanet.distance,
+        chosenPlanet.moons,
+        chosenPlanet.image
+      );
+    });
 
-
-    chosenPlanet = pickPlanet(listedPlanets);
-    addDestinationInfo(
-      missionTarget,
-      chosenPlanet.name,
-      chosenPlanet.diameter,
-      chosenPlanet.star,
-      chosenPlanet.distance,
-      chosenPlanet.moons,
-      chosenPlanet.image
-    );
-  });
-  
   form = document.getElementById("launchForm");
-  form.addEventListener("submit", function () {
-
-
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
     const pilotName = document.querySelector("input[name=pilotName");
     const copilotName = document.querySelector("input[name=copilotName");
     const fuelLevels = document.querySelector("input[name=fuelLevel");
@@ -38,6 +35,5 @@ window.addEventListener("load", function () {
       fuelLevels,
       cargoMasses
     );
-    event.preventDefault();
   });
 });
