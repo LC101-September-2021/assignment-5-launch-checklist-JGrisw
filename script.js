@@ -1,16 +1,39 @@
-// Write your JavaScript code here!
+window.addEventListener("load", function () {
+  let listedPlanets;
+  let chosenPlanet;
+  // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+  let listedPlanetsResponse = myFetch();
+  listedPlanetsResponse
+    .then(function (result) {
+      listedPlanets = result;
+    })
+    .then(function () {
+      chosenPlanet = pickPlanet(listedPlanets);
+      addDestinationInfo(
+        missionTarget,
+        chosenPlanet.name,
+        chosenPlanet.diameter,
+        chosenPlanet.star,
+        chosenPlanet.distance,
+        chosenPlanet.moons,
+        chosenPlanet.image
+      );
+    });
 
-window.addEventListener("load", function() {
-
-   let listedPlanets;
-   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-   let listedPlanetsResponse;
-   listedPlanetsResponse.then(function (result) {
-       listedPlanets = result;
-       console.log(listedPlanets);
-   }).then(function () {
-       console.log(listedPlanets);
-       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-   })
-   
+  form = document.getElementById("launchForm");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const pilotName = document.querySelector("input[name=pilotName");
+    const copilotName = document.querySelector("input[name=copilotName");
+    const fuelLevels = document.querySelector("input[name=fuelLevel");
+    const cargoMasses = document.querySelector("input[name=cargoMass");
+    formSubmission(
+      launchStatusCheck,
+      faultyItems,
+      pilotName,
+      copilotName,
+      fuelLevels,
+      cargoMasses
+    );
+  });
 });
